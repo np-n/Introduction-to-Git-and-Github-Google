@@ -1,0 +1,9 @@
+--- file1.py	2020-11-21 21:16:00.413862322 +0545
++++ file2.py	2020-11-21 21:16:37.797872541 +0545
+@@ -1,4 +1,4 @@
+ def print_name(name):
+-	print('your name is ',name)
++	print(name)
+ 
+-print_name('Netra')
++print_name(name)
