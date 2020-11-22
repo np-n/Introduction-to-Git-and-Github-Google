@@ -34,3 +34,20 @@ cp ../<file> .  (To do that you must be in subdirectory)
 
 #### To commit your changes
 git commit  (It open default text editor where you can write commit message)
+
+
+#### Any git projects consist of
+-Git directory
+-working directory
+-staging area
+
+
+#### Git tracks files in following manner
+- First files are modified when we changed it
+- Then it becomes staged when we mark those changes for tracking
+- It will get commited, when we want to store those changes in VCS
+ File stage/cycle - modified, staged,committed
+ 
+ 
+#### To see git configuration in git project
+git config --l
