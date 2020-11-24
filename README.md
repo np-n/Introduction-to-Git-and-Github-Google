@@ -21,7 +21,7 @@ patch <file_name.extension> < <diff_file_name.extension>
 #### To copy content of file/ to create duplicate file with similar content
 cp <original_file_name.extension> <duplicate_file_name.extension>
 
-#### To find all directory with more info
+#### To find all directory with more info(with all hidden files and folders)
 ls -la
 
 #### To get files with .extension
@@ -71,6 +71,9 @@ git add <file_name>
 #### To track all files
 git add .
 
+
+#### To untrack/unstage file
+git restore --staged <file_name>
 #### To create snapshot/repository of your changes
 git commit (prompts default text editor,you can write multiline comments)
 git commit -m "< write your commit message here>"
@@ -100,3 +103,18 @@ git diff <file_name> (for specific changes in <file_name> file)
 
 #### To see changes that are staged/tracked but not commited
 git diff --staged
+
+
+#### To delete file from repository
+git rm <filename.extension> (file <filename.extension> will be deleted from your repository)
+
+#### To rename files in the repository 
+git mv <a.extension> <b.extension> (<a.extension> file name is renamed as <b.extension>)
+(Note: mv command is also used to move files/folder in linux)
+
+
+#### To escape or avoid file in ropository
+write file name  inside .gitignore file
+Example
+To ignore readme.txt file
+echo readme.txt > .gitignore
