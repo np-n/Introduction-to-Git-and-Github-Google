@@ -37,9 +37,9 @@ git commit  (It open default text editor where you can write commit message)
 
 
 #### Any git projects consist of
--Git directory
--working directory
--staging area
+- Git directory
+- working directory
+- staging area
 
 
 #### Git tracks files in following manner
@@ -51,3 +51,32 @@ git commit  (It open default text editor where you can write commit message)
  
 #### To see git configuration in git project
 git config --l
+
+
+#### To see what changes are done in a file(example a.extension)
+git diff a.extension(just after modification before adding modified files for tracking)
+
+
+#### If you are using git first time tell git who you are
+git config --global user.name ="<your_username>"
+git config --global user.email ="<your_email>"
+
+
+#### To initialize git/git working directory
+git init
+
+#### To stage/Track file
+git add <file_name>
+
+#### To track all files
+git add .
+
+#### To create snapshot/repository of your changes
+git commit (prompts default text editor,you can write multiline comments)
+git commit -m "< write your commit message here>"
+
+
+#### To track changes in tracked files and commit in single steps
+git commit -a   (Doesn't work for new files which are not tracked yet,opens in default text editor)
+git commit -a -m "<write your commit message>"
+
