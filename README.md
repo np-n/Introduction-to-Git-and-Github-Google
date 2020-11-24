@@ -80,3 +80,23 @@ git commit -m "< write your commit message here>"
 git commit -a   (Doesn't work for new files which are not tracked yet,opens in default text editor)
 git commit -a -m "<write your commit message>"
 
+#### To see past changes history/commit
+git log
+
+#### To see all changes in commit/associated patches
+git log -p
+
+#### To see specific changes in a commit
+git show <commit_id>(<commit_id> is identifier associated with each commit)
+
+#### To see status of changes/commit
+git log --stat
+
+
+#### To see changes before starting file tracking/staging file
+git diff (for all changes)
+git diff <file_name> (for specific changes in <file_name> file)
+
+
+#### To see changes that are staged/tracked but not commited
+git diff --staged
