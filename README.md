@@ -101,7 +101,11 @@ git show <commit_id>(<commit_id> is identifier associated with each commit)
 #### To see status of changes/commit
 git log --stat
 
+#### To see commit as graph
+git log --graph
 
+#### To see all commit,single line for a single  commit
+git log --graph --oneline
 #### To see changes before starting file tracking/staging file
 git diff (for all changes)
 git diff <file_name> (for specific changes in <file_name> file)
@@ -157,8 +161,22 @@ git branch (current branch is indicated by *)
 #### To create new branch
 git branch <new_branch_name>
 
+
 #### To enter into branch
 git checkout <new_branch_name>
-
+(Note: Before you checkout branch you need to save/commit your changes)
 #### To create and enter new  branch into single command
 git checkout -b <new_branch_name>
+
+
+#### To delete git branch
+git branch -d <branch_name> (Note: to delete branch you must be in master branch)
+#### To delete git branch forcefully  without merging/saving changes in branch
+git branch -D <branch_name>
+
+
+#### To merge branch
+git merge <merging_branch_name> (note: to merge you must be in your destination branch)
+#### Two type of git merging algorithms:
+- fast forward merge
+- three way merge 
