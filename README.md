@@ -89,6 +89,8 @@ git commit -a -m "<write your commit message>"
 #### To see past changes history/commit
 git log
 
+### To see n latest commit/log
+git log -n
 #### To see all changes in commit/associated patches
 git log -p
 #### To see all patches in n commits
@@ -130,7 +132,7 @@ git restore <file_name.extension> (new approach)
 (Restore file to last staged/tradked state)
 
 
-#### How to change commit message
+#### TO change commit message
 git commit --amend
 
 ### How to fix staged/unstage changes, how to fix the commit that was incomplete
@@ -146,3 +148,17 @@ git revert HEAD (creates new commit with inverse changes, add reason for rollbac
 
 #### To rollback to specific snapshot
 git revert <commit_id_for_snapshot>
+
+
+### Branch
+#### To see available branch
+git branch (current branch is indicated by *)
+
+#### To create new branch
+git branch <new_branch_name>
+
+#### To enter into branch
+git checkout <new_branch_name>
+
+#### To create and enter new  branch into single command
+git checkout -b <new_branch_name>
