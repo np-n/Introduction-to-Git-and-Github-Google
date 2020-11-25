@@ -66,14 +66,17 @@ git config --global user.email ="<your_email>"
 git init
 
 #### To stage/Track file
-git add <file_name>
+git add <file_name.extension>
 
 #### To track all files
 git add .
 
 
-#### To untrack/unstage file
-git restore --staged <file_name>
+#### To untrack/unstage file, which is already staged but not commited
+git restore --staged <file_name.extension>
+git reset HEAD <file_name.extension>
+#### To restore/unstage all file and folders
+git restore --staged .
 #### To create snapshot/repository of your changes
 git commit (prompts default text editor,you can write multiline comments)
 git commit -m "< write your commit message here>"
@@ -88,7 +91,8 @@ git log
 
 #### To see all changes in commit/associated patches
 git log -p
-
+#### To see all patches in n commits
+git log -p -n
 #### To see specific changes in a commit
 git show <commit_id>(<commit_id> is identifier associated with each commit)
 
@@ -118,3 +122,27 @@ write file name  inside .gitignore file
 Example
 To ignore readme.txt file
 echo readme.txt > .gitignore
+
+
+#### To discard changes in the working directory/file, if file is not tracked yet
+git checkout <file_name.extension> (old approach)
+git restore <file_name.extension> (new approach)
+(Restore file to last staged/tradked state)
+
+
+#### How to change commit message
+git commit --amend
+
+### How to fix staged/unstage changes, how to fix the commit that was incomplete
+git add <file_name.extension>(add or unstage file )
+or
+git add .
+
+git commit --amend(can change commit in editor)
+
+
+#### To revert/go back to last snapshot/repository, because current changes in repo produce error
+git revert HEAD (creates new commit with inverse changes, add reason for rollback in commit) 
+
+#### To rollback to specific snapshot
+git revert <commit_id_for_snapshot>
