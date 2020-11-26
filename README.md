@@ -209,6 +209,8 @@ i. Clone repo make changes and again push to remote
 
 ii. If you want to push your local repository to existing repository
 - To initialize git working directory use `git init`
+- If you have README.md file in remote repository then create that file on local repo too using `touch README.md` or
+<br> `echo "# <your_repo_name> " >> README.md`
 - To track/stage file `git add <file_name>` for single file <br>
 or `git add .` for all files
 - To make snapshot/version of your changes use `git commit -m '<commit_message>'`<br>
