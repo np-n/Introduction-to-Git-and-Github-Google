@@ -258,17 +258,46 @@ Note : You need to enter your credential one more time  and your credentials are
 `git log --graph --online --all`
 
 ### Merge conflicts
-If same line or same section of the file is already change and committed in remote branch and
-is also changed in local branch,And you will try to push the local branch on the remote branch where file is already changed
-<br>Then it will throw merge conflict.<br>
-To solve merge conflict:<br>
-first pull your remote repository
+- If same line or same section of the file is already changed and committed in both remote branch and
+local branch,And then if you will try to push the local branch on the remote branch where file is already changed
+<br>Then it will throw merge conflict.
+- To solve merge conflict:<br>
+- first pull your remote repository to merge remote changes to local
 `git pull`
-<br>It will throw merge conflict message , for file which has been changed from remote and locally
-<br>Then try tree way merge, because automatic merge is not possible
-<br>Open file in text editor in which merge conflict arises
-<br>Where you can find <<<<<<<, =======, and >>>>>>> conflict markers
-<br>Remove all of the conflict markers and only leave the code as it should be after the merge and save it.
-<br>Then stage that file using `git add .` or `git add <file_name>`
-<br>Then commit changes using `git commit` where commit is already written, if you wish all more explanation.
-<br>Then push your local merged version to remote using `git push`
+- It will throw merge conflict message , for file which has been changed from  both remote and local
+- This merge is tree way merge, because file are changed in both repo (if file is changed in only one repo, then merge will be fast forward merge)
+- Open file in text editor in which merge conflict arises
+- Where you can find <<<<<<<, =======, and >>>>>>> conflict markers
+- Remove all of the conflict markers and only leave the code as it should be after the merge and save it.
+- Then stage that file using `git add .` or `git add <file_name>`
+- Then commit changes using `git commit` where commit is already written, if you wish all more explanation.
+- Then push your local merged version to remote using `git push`
+
+
+#### To create new repository, add changes and push to Remote
+- git checkout -b <branch_name>(creates branch <branch_name> and switched to <branch_name>)
+- Do changes as your requirements
+- Stage your changes and commit changes Using `git add .` followed by `git commit -m 'your commit message'`
+- Do step 3 as per your requirements
+- Finally push your branch <branch_name> to remote repository before merging
+`git push -u origin <branch_name>`
+
+
+#### Git rebase to make history linear(Alternative of three way merge)
+1. This method addresses changes in single branch only(example remote master branch and local mater branch)
+- If same line or same section of the file is already changed and committed in both remote branch and
+local branch,And then if you will try to push the local branch on the remote branch where file is already changed
+<br>Then it will throw merge conflict and rebase come to action,it avoids three way merge and make history linear.
+- first fetch your remote repository
+`git fetch`
+- To rebase local commit against remote use `git rebase origin/main`
+- Then it pop up merge conflicts, to solve merge conflict: <br>
+- Open file in text editor in which merge conflict arises
+- Where you can find <<<<<<<, =======, and >>>>>>> conflict markers
+- Remove all of the conflict markers and only leave the code as it should be after the merge and save it.
+- Then stage that file using `git add .` or `git add <file_name>`
+- Then continue rebase `git rebase --continue`
+- Then see your log, where you can see that commit message are linear i.e local branch commit message rebase remote message(local commit history becomes last history and remote history becomes second last history)
+- Then push your local rebased final version to remote using `git push`
+
+To learn more about rebase changes  [click here](https://www.coursera.org/learn/introduction-git-github/lecture/cEqbt/rebasing-your-changes)
