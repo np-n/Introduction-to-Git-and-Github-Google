@@ -1,4 +1,4 @@
-##--------------- Week 1 : Into to Version Control --------------------
+## --------------- Week 1 : Into to Version Control --------------------
 
 #### To find difference between two files
 `diff <first_file_name.extension> <second_file_name.extension>`<br>
@@ -62,6 +62,7 @@ git config --global user.email ="<your_email>"
 #### To track all files
 `git add .`
 
+
 #### To untrack/unstage file, which is already staged but not commited
 ```
 git restore --staged <file_name.extension>
@@ -76,7 +77,7 @@ git reset HEAD <file_name.extension>
 `git commit -m "< write your commit message here>"`
 
 
-##-------------------- Week 2 : Using Git locally ------------------------------
+## -------------------- Week 2 : Using Git locally ------------------------------
 
 #### To track changes in tracked files and commit in single steps
 `git commit -a`  (Doesn't work for new files which are not tracked yet,opens in default text editor)<br>
@@ -202,18 +203,20 @@ Basic Interaction with Github:
 - Edit file
 - Stage changes and commit changes
 `git commit -a -m 'your commit message'`
-- Then push your modified local repo to github
+- Then push your modified local repo to github using  
 `git push`
 
 3. To avoid repeated username and password entry:
 - Use SSH Key-pair or,
 - Use Credential Helper
 `git config --global credential.helper cache`
-<br>
 Note : You need to enter your credential one more time  and your credentials are cached for next 15 minutes
+<br>
+4.  retrieve new changes from remote and merge to local repository using  
+`git pull ``  
 
-4. To retrieve new changes from repository
-git pull   
+5. To see status of the remote repository
+`git status` ( we have clone remote repo, thus `git status` shows status of remote repository)
 
 #### To see remote configuration(url associated with origin remote) of your repository
 `git remote -v`
@@ -223,3 +226,49 @@ git pull
 
 #### To see remote branches that git repo is currently tracking
 `git branch -r`
+
+#### To download and review the changes/commits happens in the remote repository(to local)
+`git fetch`
+
+#### To see the log/history of the remote changes
+`git log origin/<branch_name>`(exanple: `git log origin/main` ,`git log origin/master`)
+
+#### To merge the remote changes in branch to local branch
+`git merge origin/<branch_name>`
+
+#### To fetch current repository from remote branch and merge it to local branch
+`git pull`
+
+#### To see any changes in files in n commit
+`git log -p -n`
+
+#### To see if your local repository is up to date with remote
+`git status`
+
+#### To see all branches information about Remotes
+`git remote show origin`
+
+#### If there was any branch added in remote repository
+`git checkout <branch_name>` (This will create copy of remote branch to local)
+
+#### To add file and see changes in file
+`git add -p`
+
+#### To see all the commits in oneline
+`git log --graph --online --all`
+
+### Merge conflicts
+If same line or same section of the file is already change and committed in remote branch and
+is also changed in local branch,And you will try to push the local branch on the remote branch where file is already changed
+<br>Then it will throw merge conflict.<br>
+To solve merge conflict:<br>
+first pull your remote repository
+`git pull`
+<br>It will throw merge conflict message , for file which has been changed from remote and locally
+<br>Then try tree way merge, because automatic merge is not possible
+<br>Open file in text editor in which merge conflict arises
+<br>Where you can find <<<<<<<, =======, and >>>>>>> conflict markers
+<br>Remove all of the conflict markers and only leave the code as it should be after the merge and save it.
+<br>Then stage that file using `git add .` or `git add <file_name>`
+<br>Then commit changes using `git commit` where commit is already written, if you wish all more explanation.
+<br>Then push your local merged version to remote using `git push`
