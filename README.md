@@ -1,3 +1,5 @@
+##--------------- Week 1 : Into to Version Control --------------------
+
 #### To find difference between two files
 `diff <first_file_name.extension> <second_file_name.extension>`<br>
 Alternatively<br>
@@ -38,7 +40,7 @@ Alternatively<br>
 - Then it becomes staged when we mark those changes for tracking
 - It will get commited, when we want to store those changes in VCS
  File stage/cycle - modified, staged,committed
-  
+
 #### To see git configuration in git project
 `git config --l`
 
@@ -72,6 +74,9 @@ git reset HEAD <file_name.extension>
 #### To create snapshot/repository of your changes
 `git commit`   (prompts default text editor,you can write multiline comments)<br>
 `git commit -m "< write your commit message here>"`
+
+
+##-------------------- Week 2 : Using Git locally ------------------------------
 
 #### To track changes in tracked files and commit in single steps
 `git commit -a`  (Doesn't work for new files which are not tracked yet,opens in default text editor)<br>
@@ -111,7 +116,7 @@ git reset HEAD <file_name.extension>
 #### To delete file from repository
 `git rm <filename.extension> `  (file <filename.extension> will be deleted from your repository)
 
-#### To rename files in the repository 
+#### To rename files in the repository
 `git mv <a.extension> <b.extension> `(<a.extension> file name is renamed as <b.extension>)<br>
 (Note: mv command is also used to move files/folder in linux)
 
@@ -137,7 +142,7 @@ Fillowed by<br>
 `git commit --amend `  (can change commit in editor)
 
 #### To revert/go back to last snapshot/repository, because current changes in repo produce error
-`git revert HEAD `  (creates new commit with inverse changes, add reason for rollback in commit) 
+`git revert HEAD `  (creates new commit with inverse changes, add reason for rollback in commit)
 
 #### To rollback to specific snapshot
 `git revert <commit_id_for_snapshot>`
@@ -158,7 +163,7 @@ Note: Before you checkout branch you need to save/commit your changes
 `git checkout -b <new_branch_name>`
 
 #### To delete git branch
-`git branch -d <branch_name>`<br> 
+`git branch -d <branch_name>`<br>
 Note: to delete branch you must be in master branch
 
 #### To delete git branch forcefully  without merging/saving changes in branch
@@ -170,7 +175,51 @@ Note: to merge you must be in your destination branch
 
 #### Two type of git merging algorithms:
 - fast forward merge
-- three way merge 
+- three way merge
 
 #### To abort/cancel merge
 `git merge --abort`
+
+
+## --------------------- Week3 : Working with Remotes ----------------------
+
+Basic Interaction with Github:
+1. Create new github repository
+- Create your account and login to it,
+- click on create repository link or plus sign,
+- Name repository,
+- Add description to repo and is optional,
+- Select visibility for repo that is either private or public,
+- initialize repo with README,
+- Then click on create repository
+
+2. Clone repo make changes and again push to remote
+- open your terminal and enter command
+`git clone <REPO_HTTPS_URL>`
+- Enter username and password for your github account
+- Directory with repository name is created in your local computer
+- README.md file is present inside your repo folder
+- Edit file
+- Stage changes and commit changes
+`git commit -a -m 'your commit message'`
+- Then push your modified local repo to github
+`git push`
+
+3. To avoid repeated username and password entry:
+- Use SSH Key-pair or,
+- Use Credential Helper
+`git config --global credential.helper cache`
+<br>
+Note : You need to enter your credential one more time  and your credentials are cached for next 15 minutes
+
+4. To retrieve new changes from repository
+git pull   
+
+#### To see remote configuration(url associated with origin remote) of your repository
+`git remote -v`
+
+#### To get more information about remote
+`git remote show origin`
+
+#### To see remote branches that git repo is currently tracking
+`git branch -r`
