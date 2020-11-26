@@ -194,7 +194,8 @@ Basic Interaction with Github:
 - initialize repo with README,
 - Then click on create repository
 
-2. Clone repo make changes and again push to remote
+2.
+i. Clone repo make changes and again push to remote
 - open your terminal and enter command
 `git clone <REPO_HTTPS_URL>`
 - Enter username and password for your github account
@@ -204,7 +205,18 @@ Basic Interaction with Github:
 - Stage changes and commit changes
 `git commit -a -m 'your commit message'`
 - Then push your modified local repo to github using  
-`git push`
+`git push`or`git push -u origin main` or `git push origin main`
+
+ii. If you want to push your local repository to existing repository
+- To initialize git working directory use `git init`
+- To track/stage file `git add <file_name>` for single file <br>
+or `git add .` for all files
+- To make snapshot/version of your changes use `git commit -m '<commit_message>'`<br>
+or `git commit ` enter good commit from default text editor
+- To stage and commit use `git commit -a -m` or `git commit -a`
+- To add remote url as origin use `git add remote origin <REPO_URL>`
+- To push your repo to github main branch use `git push -u origin main`
+- To push your repo to github <branch_name> branch use `git push -u origin <branch_name>`
 
 3. To avoid repeated username and password entry:
 - Use SSH Key-pair or,
@@ -301,3 +313,6 @@ local branch,And then if you will try to push the local branch on the remote bra
 - Then push your local rebased final version to remote using `git push`
 
 To learn more about rebase changes  [click here](https://www.coursera.org/learn/introduction-git-github/lecture/cEqbt/rebasing-your-changes)
+
+
+
