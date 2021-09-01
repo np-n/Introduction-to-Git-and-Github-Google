@@ -315,6 +315,7 @@ local branch,And then if you will try to push the local branch on the remote bra
 - Then push your local rebased final version to remote using `git push`
 
 To learn more about rebase changes  [click here](https://www.coursera.org/learn/introduction-git-github/lecture/cEqbt/rebasing-your-changes)
-
+ </br>
+ <img src="https://github.com/np-n/My-Coursera-Certificates/blob/master/Google%20IT%20Automation%20with%20Python%20Professional%20Certificate/3.%20Introduction%20to%20Git%20and%20Github/Coursera%20UGZHULFYPHKL.pdf">
 
 
