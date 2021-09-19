@@ -1,9 +1,10 @@
 # Introduction to Git and Github - Google
 It is a course from Google IT Automation with Python Specialization
-</br>
-[Coursera UGZHULFYPHKL.pdf](https://github.com/np-n/Introduction-to-Git-and-Github-Google/files/7192590/Coursera.UGZHULFYPHKL.pdf)
 
-</br>
+
+[Coursera UGZHULFYPHKL.pdf](https://github.com/np-n/Introduction-to-Git-and-Github-Google/files/7192591/Coursera.UGZHULFYPHKL.pdf)
+
+
 ## --------------- Week 1 : Into to Version Control --------------------
 
 #### To find difference between two files
