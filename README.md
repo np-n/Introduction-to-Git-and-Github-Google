@@ -57,6 +57,11 @@ Alternatively<br>
 #### To compare the state of your files with those in the staging area
  `git diff -r HEAD <path/to/file>`
  
+#### To see changes in files during relative commit(CONFUSED?)
+ - `HEAD`  always refers to most recent commit
+ - The label `HEAD~1` then refers to the commit before it, while `HEAD~2` refers to the commit before that, and so on.
+ `git diff HEAD~2`
+ 
 #### If you are using git first time tell git who you are
 ```
 git config --global user.name ="<your_username>"
