@@ -102,6 +102,9 @@ git reset HEAD <file_name.extension>
 #### To see all patches in n commits
 `git log -p -n`
 
+ ### Tov view specific directory/files history
+ `git log <directory/file_path>
+ 
 #### To see specific changes in a commit
 `git show <commit_id>`  (<commit_id> is identifier associated with each commit)
 
