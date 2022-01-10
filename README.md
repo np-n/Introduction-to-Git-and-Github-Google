@@ -54,6 +54,9 @@ Alternatively<br>
 #### To see what changes are done in a file(example a.extension)
 `git diff a.extension`(just after modification before adding modified files for tracking)
 
+#### To compare the state of your files with those in the staging area
+ `git diff -r HEAD <path/to/file>`
+ 
 #### If you are using git first time tell git who you are
 ```
 git config --global user.name ="<your_username>"
@@ -102,8 +105,8 @@ git reset HEAD <file_name.extension>
 #### To see all patches in n commits
 `git log -p -n`
 
- ### Tov view specific directory/files history
- `git log <directory/file_path>
+#### Tov view specific directory/files history
+`git log <directory/file_path>
  
 #### To see specific changes in a commit
 `git show <commit_id>`  (<commit_id> is identifier associated with each commit)
